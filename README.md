@@ -1,89 +1,108 @@
-# 📊 Stock Market Risk & Return Analysis
+# 📊 Stock Market Risk & Return Analysis using Python
 
-## 📌 Overview
-This project explores **risk and return analysis of stocks** using Python.
-Instead of focusing on stock price prediction, this analysis emphasizes **exploratory data analysis (EDA)**, **volatility assessment**, **correlations**, and **Value at Risk (VaR)** to better understand financial risk.
+## 📌 Project Overview
+This project performs a **risk and return analysis** of selected technology stocks using Python and historical market data.  
+Instead of focusing on price prediction, the emphasis is on **understanding stock behavior**, including trends, volatility, correlations, and downside risk.
 
-It is designed as a **portfolio-ready project** to showcase practical skills in:
-- Financial data collection
-- Statistical risk analysis
-- Data visualization
-- Insight-driven storytelling
-
-Recruiters, hiring managers, and collaborators can quickly see how financial analysis concepts are implemented in Python.
+The analysis demonstrates how financial data can be explored, visualized, and interpreted to support informed decision-making — a core skill for data analyst and financial analyst roles.
 
 ---
 
-## ⚙️ Tech Stack & Tools
-- **Python** 🐍
-- **yfinance** → fetch historical stock data
-- **pandas & numpy** → data wrangling and calculations
-- **matplotlib & seaborn** → visualization
-- **scipy** → statistical operations
+## 🎯 Objectives
+The key objectives of this project are:
+- Analyze historical stock price movements
+- Measure daily return volatility
+- Identify trends using moving averages
+- Examine correlations between stocks for diversification insights
+- Estimate downside risk using **Value at Risk (VaR)**
 
 ---
 
-## 📂 Project Workflow
+## 📂 Data Source
+- **Source:** Yahoo Finance  
+- **Access Method:** `yfinance` Python package  
+- **Stocks Analyzed:**
+  - Apple (AAPL)
+  - Amazon (AMZN)
+  - Google (GOOGL)
+  - Microsoft (MSFT)
+- **Time Period:** 2019 – 2024  
+- **Frequency:** Daily data
 
-1. **📥 Data Collection**
-   - Fetch historical stock data (Apple, Microsoft, Google, Amazon, etc.) using `yfinance`.
-
-2. **🔎 Exploratory Data Analysis (EDA)**
-   - Inspect data summary, check for missing values, visualize stock price trends.
-
-3. **📈 Daily Returns**
-   - Compute and plot daily returns.
-   - Analyze volatility and return distributions.
-
-4. **📊 Moving Averages**
-   - Calculate 20-day and 50-day moving averages.
-   - Identify short-term momentum vs. long-term trends.
-
-5. **🤝 Correlation Analysis**
-   - Compute correlation matrix of returns.
-   - Visualize with heatmaps to evaluate diversification opportunities.
-
-6. **⚠️ Value at Risk (VaR)**
-   - Estimate downside risk at 95% and 99% confidence levels.
-   - Interpret maximum expected daily losses.
-
-7. **💡 Insights & Conclusion**
-   - Summarize key findings on volatility, diversification, and risk exposure.
-   - Provide actionable takeaways for portfolio management.
+Adjusted closing prices are used to ensure accuracy in return calculations.
 
 ---
 
-## 📊 Key Insights
+## 🛠️ Tech Stack
+- **Python**
+- **yfinance** – Financial data retrieval
+- **pandas / numpy** – Data manipulation & numerical analysis
+- **matplotlib / seaborn** – Data visualization
+- **Monte Carlo Simulation** – Risk estimation (VaR)
 
-- **Volatility:** Tech stocks show higher fluctuations, implying greater risk.
-- **Diversification:** Correlation analysis reveals which stocks move together vs. independently.
-- **Risk Exposure:** VaR quantifies potential maximum daily losses, providing a clear threshold for downside risk.
+---
 
-✅ **Takeaway:** This project demonstrates strong skills in **financial data analysis, risk quantification, and visualization** — making it highly relevant for **Data Analyst / Data Science roles in finance**.
+## 📘 Notebook Structure
+
+### ⚙️ Setup & Imports
+Imports all required libraries and defines the stock tickers and analysis time period.
+
+---
+
+### 📥 Fetch Historical Data
+Downloads historical **Adjusted Close** prices and trading volumes using the `yfinance` API.
+
+---
+
+### 🔎 Exploratory Data Analysis (EDA)
+- Summary statistics (`.info()`, `.describe()`)
+- Visualization of closing prices over time
+- Trading volume analysis  
+This step builds intuition around price trends and market activity.
+
+---
+
+### 📈 Daily Returns
+- Calculates day-to-day percentage price changes
+- Visualizes return time series
+- Displays return distributions to assess volatility and risk
+
+---
+
+### 📊 Moving Averages
+- Computes 20-day and 50-day moving averages
+- Highlights short-term momentum and long-term trends
+- Commonly used in technical market analysis
+
+---
+
+### 🤝 Correlation Analysis
+- Scatter plots and pairplots of stock returns
+- Correlation heatmap
+- Helps identify diversification opportunities and co-movement between stocks
+
+---
+
+### ⚠️ Value at Risk (VaR)
+Uses **Monte Carlo simulation** to estimate downside risk:
+- Calculates the potential maximum daily loss at a 95% confidence level
+- Provides a quantitative risk threshold commonly used in finance
+
+---
+
+### 💡 Insights & Conclusion
+- Stocks exhibit varying levels of volatility and risk
+- Moving averages reveal clear trend patterns
+- Correlation analysis highlights diversification benefits
+- VaR quantifies downside exposure in practical terms
+
+**Key Takeaway:**  
+This project demonstrates a structured approach to financial risk analysis using real-world data, strong visualization, and clear interpretation — forming a solid foundation for advanced portfolio analysis or predictive modeling.
 
 ---
 
 ## 🚀 How to Run
 
-1. Clone this repository:
-   ```bash
-   git clone https://github.com/your-username/stock-risk-return-analysis.git
-   cd stock-risk-return-analysis
-  
-2. Install dependencies:
-	 pip install -r requirements.txt
-
-3. Launch Jupyter Notebook:
-	 jupyter notebook
-
-4. Open and run:
-project1_stock_risk_return_analysis.ipynb
-
----
-## 👤 Author
-
-**Your Name**
-
-- 💼 Aspiring Data Analyst with a product + startup mindset
-- 📊 Passion for financial analytics & risk modeling
-- 🌐 [LinkedIn](https://linkedin.com/in/your-link) | [GitHub](https://github.com/your-username)
+```bash
+pip install -r requirements.txt
+jupyter notebook stock_risk_return_analysis.ipynb
